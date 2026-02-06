@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dolotech Design System - All colors in HSL */
+
+@layer base {
+  :root {
+    --background: 220 40% 9%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 9%;
+
+    --primary: 214 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 40% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 20%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 145 63% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 214 100% 50%;
+
+    --radius: 0.5rem;
+
+    --navy-dark: 220 40% 9%;
+    --navy-light: 220 35% 15%;
+    --blue-bright: 214 100% 50%;
+    --green-accent: 145 63% 42%;
+
+    --sidebar-background: 220 40% 9%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground scroll-smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--navy-dark)) 0%, hsl(var(--navy-light)) 50%, hsl(220 35% 20%) 100%);
+  }
+
+  .gradient-services {
+    background: linear-gradient(180deg, hsl(220 35% 12%) 0%, hsl(220 40% 9%) 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(200 100% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 15s linear infinite;
+}
+
+.hover\:pause-animation:hover {
+  animation-play-state: paused;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scroll animation utilities */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+
+.animate-fade-in.visible {
+  opacity: 1;
+}
+
+/* Stagger delays */
+.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.delay-400 {
+  transition-delay: 0.4s;
+}
+
+.delay-500 {
+  transition-delay: 0.5s;
+}
+
+.delay-600 {
+  transition-delay: 0.6s;
+}
