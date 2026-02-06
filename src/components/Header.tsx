@@ -34,7 +34,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10">
-              <img src="/do_lo_logoo.png" alt="" />
+              <img src="/do_lo_logo.png" alt="" />
             </div>
             <span className="text-foreground font-bold text-xl hidden sm:block">
               DO LO TECH
@@ -48,17 +48,19 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-foreground/80 hover:text-foreground transition-colors text-sm font-medium"
+                  className="text-foreground/80 hover:text-foreground transition-colors text-sm font-medium relative group"
                 >
                   {link.name}
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-foreground transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ) : (
                 <a
                   key={link.name}
                   href={isHomePage ? link.href : `/${link.href}`}
-                  className="text-foreground/80 hover:text-foreground transition-colors text-sm font-medium"
+                  className="text-foreground/80 hover:text-foreground transition-colors text-sm font-medium relative group"
                 >
                   {link.name}
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-foreground transition-all duration-300 group-hover:w-full"></span>
                 </a>
               )
             ))}
